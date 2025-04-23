@@ -1,0 +1,32 @@
+{
+  "name": "mcp-server-example-00",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "bin": {
+    "weather": "./build/server.js"
+  },
+  "main": "index.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc && chmod 755 build/server.js",
+    "clean": "rm -rf build/*",
+    "start": "node build/server.js",
+    "dev": "nodemon src/server.ts",
+    "dev:esm": "nodemon --watch src --exec ts-node --esm src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
